@@ -5,9 +5,10 @@
   "private": true,
   "scripts": {
     "start": "LOG_LEVEL=http node ./bin/www",
-    "dev": "LOG_LEVEL=debug nodemon ./bin/www"
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^2.23.0",
     "compression": "^1.8.1",
     "cookie-parser": "~1.4.4",
     "express": "~4.16.1",
