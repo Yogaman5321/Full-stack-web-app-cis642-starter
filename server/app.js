@@ -1,6 +1,8 @@
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
+import compression from 'compression';
+import helmet from 'helmet';
 import requestLogger from './middlewares/request-logger.js';
 
 import indexRouter from './routes/index.js';
@@ -8,6 +10,8 @@ import usersRouter from './routes/users.js';
 
 var app = express();
 
+app.use(helmet());
+app.use(compression());
 app.use(requestLogger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
