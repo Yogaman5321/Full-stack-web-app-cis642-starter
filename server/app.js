@@ -5,6 +5,9 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import helmet from 'helmet';
 import requestLogger from './middlewares/request-logger.js';
+import logger from './configs/logger.js';
+import openapi from './configs/openapi.js'
+import swaggerUi from 'swagger-ui-express'
 
 import indexRouter from './routes/index.js';
 import usersRouter from './routes/users.js';
@@ -21,5 +24,10 @@ app.use(express.static(path.join(import.meta.dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+if (process.env.OPENAPI_VISIBLE === 'true') {
+    logger.warn('OpenAPI documentation visible!');
+    app.use('/docs', swaggerUi.serve, swaggerUi.setup(openapi, {explorer: true}));
+}
 
 export default app;
