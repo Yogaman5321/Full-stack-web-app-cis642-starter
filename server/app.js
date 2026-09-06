@@ -1,3 +1,9 @@
+/**
+ * @file Main Express application
+ * @author Hunter Ballew <hunter421@ksu.edu>
+ * @exports app Express application
+ */
+
 import '@dotenvx/dotenvx/config';
 import express from 'express';
 import path from 'path';

@@ -1,4 +1,8 @@
 /**
+ * @file Users router
+ * @author Hunter Ballew <hunter421@ksu.edu>
+ * @exports router an Express router
+ * 
  * @swagger
  * tags:
  *   name: users
