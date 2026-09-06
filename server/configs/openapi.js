@@ -1,21 +1,21 @@
-import swaggerJSDoc from 'swagger-jsdoc'
+import swaggerJSDoc from "swagger-jsdoc";
 
 function url() {
   if (process.env.OPENAPI_HOST) {
-    return process.env.OPENAPI_HOST
+    return process.env.OPENAPI_HOST;
   } else {
-    const port = process.env.PORT || '3000'
-    return`http://localhost:${port}`
+    const port = process.env.PORT || "3000";
+    return `http://localhost:${port}`;
   }
 }
 
 const options = {
   definition: {
-    openapi: '3.1.0',
+    openapi: "3.1.0",
     info: {
-      title: 'Example Project',
-      version: '0.0.1',
-      description: 'Example Project',
+      title: "Example Project",
+      version: "0.0.1",
+      description: "Example Project",
     },
     servers: [
       {
@@ -23,7 +23,7 @@ const options = {
       },
     ],
   },
-  apis: ['./routes/*.js'],
-}
+  apis: ["./routes/*.js"],
+};
 
-export default swaggerJSDoc(options)
+export default swaggerJSDoc(options);
